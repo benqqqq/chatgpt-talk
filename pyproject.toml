@@ -9,9 +9,11 @@ packages = [{include = "chatgpt_talk"}]
 [tool.poetry.dependencies]
 python = "^3.11"
 python-dotenv = "^1.0.0"
-PyAudio = "^0.2.13"
 SpeechRecognition = "^3.10.0"
 requests = "^2.28.2"
+sounddevice = "^0.4.6"
+numpy = "^1.24.2"
+gtts = "^2.3.1"
 
 
 [build-system]
