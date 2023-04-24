@@ -1,11 +1,11 @@
 import io
-import os
-import wave
 import threading
+import wave
 
-import speech_recognition as sr
-import sounddevice as sd
 import numpy as np
+import sounddevice as sd
+import speech_recognition as sr
+
 
 def record_audio(duration):
     samplerate = 16000
@@ -15,6 +15,7 @@ def record_audio(duration):
     myrecording = sd.rec(int(duration * samplerate))
     sd.wait()
     return myrecording
+
 
 def recognize_speech(audio_data):
     audio_data = (audio_data * np.iinfo(np.int16).max).astype(np.int16)
@@ -39,6 +40,7 @@ def recognize_speech(audio_data):
             print("Google Speech Recognition could not understand audio")
         except sr.RequestError as e:
             print(f"Could not request results from Google Speech Recognition service; {e}")
+
 
 def main():
     while True:
